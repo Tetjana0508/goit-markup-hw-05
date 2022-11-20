@@ -105,22 +105,39 @@ body {
   display: flex;
   gap: 50px;  
   margin-left: 93px;
-}
-
-.site-nav .link.current {
   color: var(--accent-color);
 }
 
-.site-nav,
+.site-item .link {
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 .link:hover,
 .link:focus {
   color: var(--accent-color);
 }
 
+.site-nav .current {
+  position: relative;
+  display: block;
+  color: var(--accent-color);
+}
+
+.site-nav .current::after {
+  content: '';
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 4px;
+  left: 0;
+  bottom: -34px;
+  border-radius: 2px;  
+  background-color: var(--accent-color);
+}
+
 .contacts {
   display: flex;
   align-items: center;
-  /*margin-left: 50px;*/
 }
 
 .contacts .contacts-link {
@@ -132,8 +149,8 @@ body {
   display: flex;
   align-items: center;
   flex-direction: row-reverse;
-  /*margin-right: 30px;*/
   margin-left: 50px;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .contacts-link:hover,
@@ -202,6 +219,8 @@ body {
   cursor: pointer;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .hero-button:hover,
@@ -278,6 +297,28 @@ body {
   gap: 30px;
 }
 
+.specialty-top-wrap {
+  position: relative;
+  /*overflow: hidden;*/
+}
+
+.specialty-top-text {
+  position: absolute;
+  bottom: 0;
+  background-color: rgba(47, 48, 58, 0.8);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.1429;
+  letter-spacing: 0.03em;
+  color: var(--subject-color);
+  width: 370px;
+  height: 70px;
+  /*text-align: center;*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 
 /*-----------------------------------Наша команда------------------*/
 .section-user {
@@ -346,7 +387,8 @@ body {
   border-radius: 50%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: center;  
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .user-soc-link:hover,
@@ -356,6 +398,7 @@ body {
 
 .user-soc-icon {
   fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .user-soc-link:hover .user-soc-icon,
@@ -383,16 +426,18 @@ body {
   border: 1px solid #AFB1B8;
   display: flex;
   align-items: center;
-  justify-content: center;
-}
-
-.clients-soc-icon {
-  fill: #AFB1B8;
+  justify-content: center;  
+  transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover,
 .clients-link:focus {  
   border-color: var(--accent-color);
+}
+
+.clients-soc-icon {
+  fill: #AFB1B8;
+  transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .clients-link:hover .clients-soc-icon,
@@ -452,6 +497,7 @@ body {
   line-height: 1.7143;
   letter-spacing: 0.03em;
   font-style: normal;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .addres:hover,
@@ -497,6 +543,8 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .footer-soc-link:hover,
@@ -538,6 +586,8 @@ body {
   border: none;
   cursor: pointer;
   border-radius: 4px;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+  color 250ms cubic-bezier(0.4, 0, 0.2, 1), box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .button-filters:hover,
@@ -570,6 +620,7 @@ body {
   text-decoration: none;
   list-style: none;
   color: var(--title-text-color);
+  transition: box-shadow 1250ms cubic-bezier(0.4, 0, 0.2, 1);
   }
 
 .filter-link:hover,
