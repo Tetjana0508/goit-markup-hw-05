@@ -68,7 +68,6 @@ body {
 }
 
 .header-nav {
-  position: relative;
   padding-top: 24px;
   padding-bottom: 25px;
   background-color: var(--subject-color);
@@ -99,7 +98,7 @@ body {
 }
 
 .site-nav {
-  position: relative;
+  /*position: relative;*/
   font-weight: 500;
   font-size: 14px;
   line-height: 1.1429;
@@ -119,14 +118,14 @@ body {
   color: var(--accent-color);
 }
 
-.site-item .current {
+.site-nav .current {
   color: var(--accent-color);
 }
 
-.site-nav .current {
+/*.site-nav .current {
   position: relative;
   display: block;
-}
+}*/
 
 .current::after {
   content: '';
